@@ -14,9 +14,9 @@
 ~/src/.../.../MyComponent.jsx
 ```js
 import { React, Component } from 'react'
-import importCss from 'importCss'
+import importcss from 'importcss'
 
-@importCss(require('./style.css'))
+@importcss(require('./style.css'))
 class MyComponent from Component {
   render() {
     return <div styleName='someMyClass'>test</div>
@@ -30,8 +30,8 @@ class MyComponent from Component {
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import CSSModules from 'react-css-modules'
 
-import { importCssOverride } from 'importCss'
-importCssOverride( (styles, params) => {
+import { importcssOverride } from 'importcss'
+importcssOverride( (styles, params) => {
   return (cls) => {
     return withStyles(styles)(
       CSSModules(styles, params || {
