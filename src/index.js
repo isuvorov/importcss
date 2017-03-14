@@ -2,7 +2,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import cssModules from 'react-css-modules';
 import React from 'react';
 
-export function wrapComponent(SuperComponent, styles, params) {
+export function wrapInnerComponent(SuperComponent, styles, params) {
   const displayName = SuperComponent.displayName || SuperComponent.name || 'Component';
 
   const InnerComponent = (props = {}) => (props.children);
@@ -35,7 +35,7 @@ export const defaultParams = {
   errorWhenNotFound: false,
 };
 export function importcssDefault(styles, params = defaultParams) {
-  return (cls) => wrapComponent(cls, styles, params);
+  return (cls) => wrapInnerComponent(cls, styles, params);
 }
 
 // makes overateble
@@ -43,6 +43,8 @@ let importcssCurrent = importcssDefault;
 export function importcssOverride(fn) {
   importcssCurrent = fn;
 }
+
+// export inner
 
 export default (...args) => (
   importcssCurrent(...args)

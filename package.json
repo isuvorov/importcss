@@ -7,7 +7,7 @@
     "build": "babel src --out-dir lib --source-maps inline --copy-files",
     "dist": "rm -rf lib && npm run build && cp {package.json,README.md} lib/",
     "dev": "npm run build -- --watch",
-    "prepublish": "in-publish && npm run dist || echo 'Subscribe @isuvorov ;)'"
+    "prepublish": "in-publish && npm run dist || echo 'Have any questions? ask @isuvorov :)'"
   },
   "babel": {
     "presets": [
