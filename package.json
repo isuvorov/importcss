@@ -1,6 +1,6 @@
 {
   "name": "importcss",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Постоянно из одного проекта в другой переношу компоненты, логика и стили которых не меняется, но способ подключения этих стилей в зависимости от проектов разный * где-то просто голые require, использование глобальных классов и последующая сборка webpack'ом * где-то CSSModules, и сборка webpack'ом * где-то isomorphic-style-loader и последующая вставка CSS корневым компонентов в html body * где-то комплексно",
   "main": "lib/index.js",
   "scripts": {
@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/isuvorov/importcss#readme",
   "dependencies": {
-    "isomorphic-style-loader": "^1.0.0",
-    "react-css-modules": "^3.7.10"
+    "isomorphic-style-loader": "^4.0.0",
+    "react-css-modules": "^4.7.1"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
@@ -51,6 +51,6 @@
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
     "in-publish": "^2.0.0",
-    "react": "^15.0.1"
+    "react": "^16.2.0"
   }
 }
