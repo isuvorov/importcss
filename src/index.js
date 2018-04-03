@@ -1,5 +1,5 @@
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import cssModules from 'react-css-modules';
+import cssModules from './react-css-modules/dist/index';
 import React from 'react';
 
 export function wrapInnerComponent(SuperComponent, styles, params) {
@@ -42,6 +42,23 @@ export function importcssDefault(styles, params = defaultParams) {
 let importcssCurrent = importcssDefault;
 export function importcssOverride(fn) {
   importcssCurrent = fn;
+}
+
+export function styleName(styles = {}, localClassName = '', globalClassName = '') {
+  let classNames = '';
+  classNames += localClassName
+    .toString()
+    .replace(/ /g, ',')
+    .split(',')
+    .filter(a => a)
+    .map((name) => styles[name])
+    .filter(a => a)
+    .join(' ');
+  // console.log('classNames1', classNames);
+  classNames += ' ';
+  classNames += globalClassName;
+  // console.log('classNames2', classNames);
+  return classNames.trim();
 }
 
 // export inner
